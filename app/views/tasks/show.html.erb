@@ -1,0 +1,14 @@
+<div class="container">
+    <h1><%= @task.title %></h1>
+    <h4><%= @task.details %></h4>
+    <h4><%= @message %></h4>
+
+    <%= link_to "Edit", edit_task_path, class: "btn btn-warning" %>
+    <%= link_to task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Delete task?" }, class: 'btn btn-danger' do %>
+      <i class="fa-solid fa-circle-xmark"></i>
+    <% end %>
+
+    <%= link_to tasks_path, class: 'btn btn-secondary' do  %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+</div>
